@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5sp"
+    android:id="@+id/row_activity">
+
+    <TextView
+        android:text="Visita Técnica à Caterpillar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:id="@+id/titulo"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Caterpillar - Piracicaba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_margin="5sp"
+        android:id="@+id/local"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="7h30 05/12/2016"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_margin="5sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/data_horario"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textSize="14sp"
+        android:textColor="@android:color/background_dark" />
+</RelativeLayout>
