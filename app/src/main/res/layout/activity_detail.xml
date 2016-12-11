@@ -66,7 +66,7 @@
 
     <Switch
         android:text="Inscritos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/data_horario_atividade"
         android:layout_alignLeft="@+id/local_atividade"
@@ -79,6 +79,25 @@
     <ListView
         android:id="@+id/subscribed_list"
         android:layout_below="@+id/headline_inscritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+    <Switch
+        android:text="Presentes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headline_inscritos"
+        android:layout_alignLeft="@+id/local_atividade"
+        android:layout_alignStart="@+id/local_atividade"
+        android:id="@+id/headline_presentes"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textStyle="normal|italic"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20sp" />
+    <ListView
+        android:id="@+id/presents_list"
+        android:clickable="false"
+        android:layout_below="@+id/headline_presentes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="invisible"/>

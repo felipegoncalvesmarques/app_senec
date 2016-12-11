@@ -74,7 +74,6 @@ public class ActivityHttpGetRequest extends AsyncTask<Integer, Void, Activity> {
             conn.setDoInput(true);
             conn.connect();
             int responseCode = conn.getResponseCode();
-            Log.d("Activity Request", "The response code is: " + responseCode);
             InputStream is = conn.getInputStream();
             Reader reader = new InputStreamReader(is, "UTF-8");
             BufferedReader br = new BufferedReader(reader);

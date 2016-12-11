@@ -1,6 +1,7 @@
 package com.example.felipe.senec;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,23 +14,35 @@ import java.util.ArrayList;
  * Created by Felipe on 10/12/2016.
  */
 
-public class ParticipantAdapter extends ArrayAdapter<Participant> {
+public class ParticipantAdapter extends ArrayAdapter<Participant> implements View.OnClickListener {
 
     private ArrayList<Participant> participants;
     private Context context;
+    private DetailActivity runningActivity;
     private int lastPosition = -1;
+    private boolean clickable;
     private final int view;
+
+    @Override
+    public void onClick(View view) {
+        int position = (Integer) view.getTag();
+        Participant participant = getItem(position);
+        runningActivity.darPresenca(participant);
+
+    }
 
     private static class ViewHolder {
         TextView nome;
         TextView email;
     }
 
-    public ParticipantAdapter(ArrayList<Participant> participants, Context context) {
+    public ParticipantAdapter(ArrayList<Participant> participants, Context context, DetailActivity runningActivity, boolean clickable) {
         super(context, R.layout.row_subscriber, participants);
         this.participants = participants;
         this.context = context;
+        this.clickable = clickable;
         this.view = R.layout.row_subscriber;
+        this.runningActivity = runningActivity;
     }
 
     @Override
@@ -64,7 +77,8 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
         viewHolder.nome.setText(participant.getNome());
         viewHolder.email.setText(participant.getEmail());
         convertView.setTag(position);
-
+        convertView.setClickable(clickable);
+        convertView.setOnClickListener(this);
         return convertView;
     }
 }
